@@ -1,0 +1,61 @@
+﻿
+@model List<MyPortfolyo.DAL.Entities.Skill>
+
+<div class="col-six tab-full right">
+    <h3>Programlama Dilleri & Teknolojileri</h3>
+
+      <ul class="skill-bars">
+
+        @foreach (var item in Model)
+        {
+            <li>
+                <div class="progress percent @item.Value"><span>@item.Value%</span></div>
+                <strong>@item.Title</strong>
+            </li>
+        }  
+
+      </ul>
+   
+</div>
+
+</div>
+
+@* 
+<style>
+    .custom-progress {
+        background-color: #f4f4f4; /* Barın arka plan rengi */
+        border-radius: 5px;
+        height: 10px;
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+    .custom-percent {
+        background-color: #ffeb3b; /* Sarı bar rengi */
+        height: 100%;
+        border-radius: 5px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: black; /* Yüzde metninin rengi */
+        text-align: center;
+        line-height: 5px; /* Bar yüksekliği ile aynı olmalı ki metin ortalansın */
+        transition: width 0.5s ease;
+    }
+</style>
+
+<div class="col-six tab-full right">
+    <h3>Programlama Dilleri & Teknolojileri</h3>
+    <ul class="skill-bars">
+        @foreach (var item in Model)
+        {
+            <li>
+                <div class="custom-progress">
+                    <div class="custom-percent" style="width: @item.Value%"><span>@item.Value%</span></div>
+                </div>
+                <strong>@item.Title</strong>
+            </li>
+        }
+    </ul>
+</div>
+ *@

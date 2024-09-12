@@ -1,0 +1,119 @@
+﻿@model List<Skill>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+
+<!-- Skills Section -->
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Yetenekler</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body skill-bars">
+                        @foreach (var skill in Model)
+                        {
+                            <div class="skill-bar">
+                                <div class="skill-name">@skill.Title</div>
+                                <div class="skill-bar-container">
+                                    <div class="skill-bar-fill" style="width: @skill.Value%;"></div>
+                                </div>
+                                <div class="skill-value">@skill.Value%</div>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Yetenekleri Düzenle </h4>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Yetenek İsmi</th>
+                                    <th scope="col">Derecesi</th>
+                                    <th scope="col">Güncelle</th>
+                                    <th scope="col">Sil</th>
+                                   
+
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Title</td>
+                                        <td>@item.Value</td>
+                                        <td><a href="/Skill/SkilUpdate/@item.SkillId" class="btn btn-success">Yeteneği Güncelle</a></td>
+                                        <td><a href="/Skill/SkillDelete/@item.SkillId" class="btn btn-success"> Yeteneği Sil</a></td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                            <a class="btn btn-warning" href="/Skill/CreateSkill/">Yetenek Ekle</a>
+
+
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .skill-bars {
+        padding: 15px;
+    }
+
+    .skill-bar {
+        margin-bottom: 10px;
+    }
+
+    .skill-name {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .skill-bar-container {
+        background-color: #f4f4f4;
+        border-radius: 5px;
+        height: 20px;
+        position: relative;
+    }
+
+    .skill-bar-fill {
+        background-color: #4caf50; /* Bar rengi */
+        height: 100%;
+        border-radius: 5px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: width 0.5s ease;
+    }
+
+    .skill-value {
+        text-align: right;
+        margin-top: 5px;
+    }
+</style>
+
