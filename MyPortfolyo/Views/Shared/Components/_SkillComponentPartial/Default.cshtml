@@ -4,58 +4,58 @@
 <div class="col-six tab-full right">
     <h3>Programlama Dilleri & Teknolojileri</h3>
 
-      <ul class="skill-bars">
+    <ul class="skill-bars">
 
         @foreach (var item in Model)
         {
-            <li>
-                <div class="progress percent @item.Value"><span>@item.Value%</span></div>
-                <strong>@item.Title</strong>
-            </li>
-        }  
+            <div class="skill-bar">
+                <div class="skill-name">@item.Title</div>
+                <div class="skill-bar-container">
+                    <div class="skill-bar-fill" style="width: @item.Value%;"></div>
+                </div>
+                <div class="skill-value">@item.Value%</div>
+            </div>
+        }
 
-      </ul>
-   
+    </ul>
+
 </div>
 
-</div>
 
-@* 
 <style>
-    .custom-progress {
-        background-color: #f4f4f4; /* Barın arka plan rengi */
-        border-radius: 5px;
-        height: 10px;
-        position: relative;
+    .skill-bars {
+        padding: 15px;
+    }
+
+    .skill-bar {
         margin-bottom: 10px;
     }
 
-    .custom-percent {
-        background-color: #ffeb3b; /* Sarı bar rengi */
-        height: 100%;
+    .skill-name {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .skill-bar-container {
+        background-color: #f4f4f4;
         border-radius: 5px;
+        height: 10px;
+        position: relative;
+    }
+
+    .skill-bar-fill {
+        background-color: black; /* Bar rengi */
+        height: 100%;
+        border-radius: 2px;
         position: absolute;
         top: 0;
         left: 0;
-        color: black; /* Yüzde metninin rengi */
-        text-align: center;
-        line-height: 5px; /* Bar yüksekliği ile aynı olmalı ki metin ortalansın */
         transition: width 0.5s ease;
+    }
+
+    .skill-value {
+        text-align: right;
+        margin-top: 5px;
     }
 </style>
 
-<div class="col-six tab-full right">
-    <h3>Programlama Dilleri & Teknolojileri</h3>
-    <ul class="skill-bars">
-        @foreach (var item in Model)
-        {
-            <li>
-                <div class="custom-progress">
-                    <div class="custom-percent" style="width: @item.Value%"><span>@item.Value%</span></div>
-                </div>
-                <strong>@item.Title</strong>
-            </li>
-        }
-    </ul>
-</div>
- *@
