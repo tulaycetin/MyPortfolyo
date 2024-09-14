@@ -2,6 +2,7 @@
 
 @model List<ToDoList>
 
+
 <div class="main-header">
  	<div class="logo-header">
 		<a href="index.html" class="logo">
@@ -33,12 +34,14 @@
 				<li class="nav-item dropdown hidden-caret">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<i class="la la-envelope"></i>
+						<span class="notification">@ViewBag.MessageListCount</span>
+
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="#">Gelen Mesajlar</a>
-						<a class="dropdown-item" href="#">Yeni Mesaj</a>
+						<a class="dropdown-item" href="#">@ViewBag.MessagetotalCount  Gelen Mesajlar</a>
+						<a class="dropdown-item" href="#">@ViewBag.MessageListCount Yeni Mesaj</a>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#">İletişim Paneli</a>
+						<a class="dropdown-item" href="/Message/Inbox/">Mesajlar a Git</a>
 					</div>
 				</li>
 

@@ -10,8 +10,11 @@ namespace MyPortfolyo.Controllers
         MyPortfolioContext _context = new MyPortfolioContext();
         public IActionResult Index()
         {
-           
-            var skill = _context.Skills.ToList();
+			ViewBag.v1 = _context.Skills.Count();
+			ViewBag.v2 = _context.Messages.Count();
+			ViewBag.v3 = _context.Messages.Where(x => x.İsRead == false).Count();
+			ViewBag.v4 = _context.Messages.Where(x => x.İsRead == true).Count();
+			var skill = _context.Skills.ToList();
             return View(skill);
         }
 

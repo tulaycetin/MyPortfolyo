@@ -7,7 +7,7 @@
 <input  type="hidden" asp-for="MessageId"/> 
 <div class="content">
 	<div class="container-fluid">
-		<h4 class="page-title">Mesajlar</h4>
+		<h4 class="page-title">Mesajlarım</h4>
 		<div class="row">
 			<div class="col-md-12">
 				<div class="card">
@@ -22,7 +22,7 @@
 							<br />
 							Mesaj : @Model.MessageDetail
 						</div>
-					
+						<a  href="/Message/Inbox/"class="la la-arrow-left"></a>
 					</div>
 				</div>
 
@@ -31,3 +31,13 @@
 		</div>
 	</div>
 </div>
+<style>
+	.la{
+		font-size:35px;
+		text-decoration:none;
+	}
+	.a{
+		text-decoration: none;
+	}
+
+</style>

@@ -1,4 +1,6 @@
-﻿<section id="works" class="s-works target-section">
+﻿@model List<Portfolio>
+
+<section id="works" class="s-works target-section">
 
     <div class="row narrow section-intro has-bottom-sep">
         <div class="col-full">
@@ -11,10 +13,10 @@
 
     <div class="row masonry-wrap">
         <div class="masonry">
-
+            @foreach(var item in Model){
             <div class="masonry__brick">
                 <div class="item-folio">
-
+                  
                     <div class="item-folio__thumb">
                         <a href="~/hola-master/images/portfolio/gallery/g-beetle.jpg" class="thumb-link" title="The Beetle Car" data-size="1050x700">
                             <img src="~/hola-master/images/portfolio/beetle.jpg"
@@ -25,10 +27,10 @@
 
                     <div class="item-folio__text">
                         <h3 class="item-folio__title">
-                            The Beetle
+                          @item.Title
                         </h3>
                         <p class="item-folio__cat">
-                            Web Development
+                          @item.SubTitle
                         </p>
                     </div>
 
@@ -37,12 +39,12 @@
                     </a>
 
                     <div class="item-folio__caption">
-                        <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
+                        <p>@item.Description</p>
                     </div>
-
+                   
                 </div> <!-- end item-folio -->
             </div> <!-- end masonry__brick -->
-
+            }
             <div class="masonry__brick">
                 <div class="item-folio">
 
